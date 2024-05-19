@@ -12,6 +12,8 @@ public class RocketHand : MonoBehaviour
     float t = 0f;
     int i = 0;
     float speed;
+   
+
     void Start()
     {
         startPos = transform.position;
