@@ -5,12 +5,15 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     private bool isShopOpen = false;
-    public GameObject shopCanvas;
+
+
+    private Canvas shopCanvas;
 
     private bool checker = false;
     void Start()
     {
-
+        shopCanvas = GameObject.Find("ShopCanvas").GetComponent<Canvas>();
+        shopCanvas.enabled = false;
     }
 
     void Update()
@@ -19,12 +22,12 @@ public class Shop : MonoBehaviour
         {
             if (isShopOpen)
             {
-                shopCanvas.SetActive(false);
+                shopCanvas.enabled = false;
                 isShopOpen = false;
             }
             else
             {
-                shopCanvas.SetActive(true);
+                shopCanvas.enabled = true;
                 isShopOpen = true;
             }
         }
@@ -44,7 +47,7 @@ public class Shop : MonoBehaviour
             checker = false;
             if (isShopOpen)
             {
-                shopCanvas.SetActive(false);
+                shopCanvas.enabled = false;
                 isShopOpen = false;
             }
         }
